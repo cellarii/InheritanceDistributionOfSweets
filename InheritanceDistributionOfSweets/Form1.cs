@@ -6,5 +6,10 @@ namespace InheritanceDistributionOfSweets
         {
             InitializeComponent();
         }
+
+        private void buttonRefill_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

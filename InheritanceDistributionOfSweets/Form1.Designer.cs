@@ -42,6 +42,7 @@
             buttonRefill.TabIndex = 0;
             buttonRefill.Text = "Перезаполнить";
             buttonRefill.UseVisualStyleBackColor = true;
+            buttonRefill.Click += buttonRefill_Click;
             // 
             // buttonGet
             // 
