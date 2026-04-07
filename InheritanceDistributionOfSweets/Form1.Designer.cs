@@ -38,7 +38,7 @@
             // 
             buttonRefill.Location = new Point(96, 34);
             buttonRefill.Name = "buttonRefill";
-            buttonRefill.Size = new Size(300, 34);
+            buttonRefill.Size = new Size(466, 34);
             buttonRefill.TabIndex = 0;
             buttonRefill.Text = "Перезаполнить";
             buttonRefill.UseVisualStyleBackColor = true;
@@ -46,12 +46,13 @@
             // 
             // buttonGet
             // 
-            buttonGet.Location = new Point(310, 143);
+            buttonGet.Location = new Point(476, 143);
             buttonGet.Name = "buttonGet";
             buttonGet.Size = new Size(86, 144);
             buttonGet.TabIndex = 1;
             buttonGet.Text = "Взять";
             buttonGet.UseVisualStyleBackColor = true;
+            buttonGet.Click += buttonGet_Click;
             // 
             // txtInfo
             // 
@@ -59,7 +60,7 @@
             txtInfo.Location = new Point(96, 74);
             txtInfo.Name = "txtInfo";
             txtInfo.ReadOnly = true;
-            txtInfo.Size = new Size(300, 63);
+            txtInfo.Size = new Size(466, 63);
             txtInfo.TabIndex = 2;
             txtInfo.Text = "";
             // 
@@ -67,7 +68,7 @@
             // 
             txtOut.Location = new Point(96, 143);
             txtOut.Name = "txtOut";
-            txtOut.Size = new Size(208, 144);
+            txtOut.Size = new Size(374, 144);
             txtOut.TabIndex = 3;
             txtOut.Text = "";
             // 

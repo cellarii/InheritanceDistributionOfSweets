@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,14 +10,37 @@ namespace InheritanceDistributionOfSweets
     public class Sweet
     {
         public double weight;
+        public static Random rnd = new Random();
 
+        public virtual string getInfo()
+        {
+            return string.Format("\nВес: {0}", weight);
+        }
     }
 
     public enum ChocholateType { dark, milky, white};
-    public class Chocholate : Sweet
+    public class Chocolate : Sweet
     {
         public ChocholateType type;
         public int numberTiles;
+
+        public static  Chocolate Generate()
+        {
+            return new Chocolate
+            {
+                weight = rnd.Next(50, 500),
+                type = (ChocholateType)rnd.Next(3),
+                numberTiles = (int)rnd.Next(2, 20)
+            };
+        }
+
+        public override string getInfo()
+        {
+            var strInfo = "Шоколадка";
+            strInfo += base.getInfo();
+            strInfo += string.Format("\nТип шоколадки: {0}\nКоличество плиток: {1}", type, numberTiles);
+            return strInfo;
+        }
     }
 
     public enum PastriesType { bun, pie, puffPastry };
@@ -25,13 +49,49 @@ namespace InheritanceDistributionOfSweets
     {
         public PastriesType type;
         public int calorie;
+
+        public static Pastries Generate()
+        {
+            return new Pastries
+            {
+                weight = rnd.Next(50, 500),
+                type = (PastriesType)rnd.Next(3),
+                calorie = (int)rnd.Next(50, 2000)
+            };
+        }
+
+        public override string getInfo()
+        {
+            var strInfo = "Выпечка";
+            strInfo += base.getInfo();
+            strInfo += string.Format("\nТип выпечки: {0}\nКалории: {1}", type, calorie);
+            return strInfo;
+        }
     }
 
-    public enum FruitType { tropical, citrus};
+    public enum creamType { chocolate, custard, cream, curd };
 
-    public class Fruit : Sweet
+    public class Cake : Sweet
     {
-        public FruitType type;
-        public int ripeness;
+        public int numberLayers;
+        public creamType creame;
+
+        public static Cake Generate()
+        {
+            return new Cake
+            {
+                weight = rnd.Next(500, 10000),
+                numberLayers = rnd.Next(1, 10),
+                creame = (creamType)rnd.Next(4)
+            };
+        }
+
+        public override string getInfo()
+        {
+            var strInfo = "Тортик";
+            strInfo += base.getInfo();
+            strInfo += string.Format("\nКоличество слоев: {0}\nКрем: {1}", numberLayers, creame);
+            return strInfo;
+        }
     }
 }
