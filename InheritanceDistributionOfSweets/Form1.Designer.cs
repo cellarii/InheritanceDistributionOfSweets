@@ -32,6 +32,7 @@
             buttonGet = new Button();
             txtInfo = new RichTextBox();
             txtOut = new RichTextBox();
+            txtQueue = new RichTextBox();
             SuspendLayout();
             // 
             // buttonRefill
@@ -72,11 +73,22 @@
             txtOut.TabIndex = 3;
             txtOut.Text = "";
             // 
+            // txtQueue
+            // 
+            txtQueue.BorderStyle = BorderStyle.None;
+            txtQueue.Location = new Point(568, 34);
+            txtQueue.Name = "txtQueue";
+            txtQueue.ReadOnly = true;
+            txtQueue.Size = new Size(150, 253);
+            txtQueue.TabIndex = 4;
+            txtQueue.Text = "";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(txtQueue);
             Controls.Add(txtOut);
             Controls.Add(txtInfo);
             Controls.Add(buttonGet);
@@ -92,5 +104,6 @@
         private Button buttonGet;
         private RichTextBox txtInfo;
         private RichTextBox txtOut;
+        private RichTextBox txtQueue;
     }
 }

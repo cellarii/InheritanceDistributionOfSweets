@@ -33,6 +33,12 @@ namespace InheritanceDistributionOfSweets
 
             txtInfo.Text = "Шоколад\tВыпечка\t\tТортик\n";
             txtInfo.Text += String.Format("{0}\t\t{1}\t\t{2}", chocolateCount, pastriesCount, cakeCount);
+
+            txtQueue.Text = "";
+            foreach (var sweet in this.sweetList)
+            {
+                txtQueue.Text += sweet.getName() + "\n";
+            }
         }
 
         private void buttonRefill_Click(object sender, EventArgs e)

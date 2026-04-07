@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace InheritanceDistributionOfSweets
 {
-    public class Sweet
+    public abstract class Sweet
     {
         public double weight;
         public static Random rnd = new Random();
@@ -16,6 +17,8 @@ namespace InheritanceDistributionOfSweets
         {
             return string.Format("\nВес: {0}", weight);
         }
+
+        public abstract string getName();
     }
 
     public enum ChocholateType { dark, milky, white};
@@ -40,6 +43,11 @@ namespace InheritanceDistributionOfSweets
             strInfo += base.getInfo();
             strInfo += string.Format("\nТип шоколадки: {0}\nКоличество плиток: {1}", type, numberTiles);
             return strInfo;
+        }
+
+        public override string getName()
+        {
+            return "Шоколадка";
         }
     }
 
@@ -67,6 +75,11 @@ namespace InheritanceDistributionOfSweets
             strInfo += string.Format("\nТип выпечки: {0}\nКалории: {1}", type, calorie);
             return strInfo;
         }
+
+        public override string getName()
+        {
+            return "Выпечка";
+        }
     }
 
     public enum creamType { chocolate, custard, cream, curd };
@@ -92,6 +105,11 @@ namespace InheritanceDistributionOfSweets
             strInfo += base.getInfo();
             strInfo += string.Format("\nКоличество слоев: {0}\nКрем: {1}", numberLayers, creame);
             return strInfo;
+        }
+
+        public override string getName()
+        {
+            return "Тортик";
         }
     }
 }
